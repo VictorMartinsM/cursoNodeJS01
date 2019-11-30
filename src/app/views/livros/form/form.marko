@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form action="/livros" method="post">
+
+            <div if(data.livro.id) >
+                <input type="hidden" name="_method" value="PUT">
+                <input type="hidden" id="id" name="id" value="${data.livro.id}" />
+            </div>
+
+            <div>
+                <label for="titulo">Título</label>
+                <input type="text" id="titulo" name="titulo" value="${data.livro.titulo}" placeholder="Digite o título do livro"/>
+            </div>
+
+            <div>
+                <label for="preco">Preço</label>
+                <input type="text" id="preco" name="preco" value="${data.livro.preco}" placeholder="Digite o preço do livro"/>
+            </div>
+
+            <div>
+                <label for="descricao">Descrição</label>
+                <textarea cols="20" rows="10" id="descricao" name="descricao">${data.livro.descricao}</textarea>
+            </div>
+
+            <input type="submit" value="Salvar"/>
+        </form>
+    </body>
+</html>
